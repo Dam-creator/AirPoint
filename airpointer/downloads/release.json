@@ -1,0 +1,9 @@
+{
+  "version": "0.3.0",
+  "platform": "macOS 14+",
+  "architecture": "arm64",
+  "notarized": false,
+  "bytes": 785963,
+  "sha256": "85fb2cb70a633e7bf82dcff275ef520d9a7341a6dfebd919b969bd25bc6858ab",
+  "file": "AirPointer-0.3.0-arm64.dmg"
+}

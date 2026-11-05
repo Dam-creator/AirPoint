@@ -1,5 +1,13 @@
 # DanDanTable · A1 学习工作台
 
+## 空指 AirPointer
+
+侧栏「更多作品 → 空指 AirPointer」进入 `airpointer.html`。提供同界面的网页交互体验、产品演示，以及 macOS 14+ / Apple Silicon 的 0.3.0 DMG 下载。浏览器演示只控制页面内的窗口；真实 AirPods 姿态和系统鼠标控制由 Mac 客户端提供。当前 DMG 使用本地签名，尚未经 Apple 公证，首次打开方式在下载窗口和映像内说明。
+
+网页源代码位于 `airpointer/`，无需前端依赖；运行 `python3 scripts/build-airpointer.py` 生成内联样式、脚本、图标和封面的独立静态页面。根目录的 DMG 与产品演示由 GitHub Pages 直接分发。网页只在 `airpointer-web:v1` 保存体验设置，不读写学习工作台档案。下载包不包含开发者个人校准数据。
+
+本机没有 Node 时，可运行 `python3 scripts/preview.py`，在 `http://127.0.0.1:4174/airpointer.html` 预览。该预览服务不公开 `.git`、服务端或测试目录。
+
 本目录是 DanDanTable 当前唯一维护的源代码目录。2026-10-12 在 A1 功能基础上升级橄榄绿液态玻璃界面：深色半透明侧栏、暖白玻璃面板、今日任务优先布局与移动端玻璃导航。
 
 ## 源代码结构

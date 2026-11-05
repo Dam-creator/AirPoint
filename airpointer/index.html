@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="空指 AirPointer：让 AirPods 成为 Mac 鼠标。体验指向、点击、拖拽和滚动，下载 Mac 预览版。">
+  <meta name="theme-color" content="#eceef0"><title>空指 AirPointer — Point. Pinch.</title>
+  <link rel="icon" href="assets/app-icon.png"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg class="svg-library" aria-hidden="true"><defs>
+  <symbol id="i-pointer" viewBox="0 0 24 24"><path d="m5 3 14 10-7 1-3 7z"/></symbol>
+  <symbol id="i-click" viewBox="0 0 24 24"><path d="m7 7 11 8-6 1-2 5zM7 1v3M1 7h3M3 3l2 2M12 3l-2 2M3 12l2-2"/></symbol>
+  <symbol id="i-drag" viewBox="0 0 24 24"><path d="M8 12V6a2 2 0 0 1 4 0v6-2a2 2 0 0 1 4 0v2a2 2 0 0 1 4 0v5c0 3-2 5-5 5h-3c-2 0-4-1-5-3l-3-5a2 2 0 0 1 3-2l2 2"/></symbol>
+  <symbol id="i-scroll" viewBox="0 0 24 24"><path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path d="m9 3 1-1h4l1 3 3 1 3 1v4l-2 2 1 3-3 3-3-1-2 3H8l-1-3-3-1-2-3 2-3V8l3-1z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></symbol>
+  <symbol id="i-scope" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 1v4m0 14v4M1 12h4m14 0h4"/></symbol>
+  <symbol id="i-buds" viewBox="0 0 32 24"><path d="M12 9C12-1 1 1 2 8c0 4 4 5 5 3v10h4V9zm8 0c0-10 11-8 10-1 0 4-4 5-5 3v10h-4V9z"/></symbol>
+</defs></svg>
+<div class="shell">
+  <aside class="rail">
+    <a class="brand" href="./" aria-label="空指首页"><img src="assets/app-icon.png" alt=""><span>空指<small>AIRPOINTER</small></span></a>
+    <nav class="rail-nav" aria-label="空指导航">
+      <a class="nav-item selected" href="#experience"><svg><use href="#i-pointer"/></svg><span>网页体验</span></a>
+      <button class="nav-item" data-open="film-dialog"><svg><use href="#i-play"/></svg><span>看演示</span><small>23s</small></button>
+      <button class="nav-item" data-open="download-dialog"><svg><use href="#i-download"/></svg><span>下载 Mac 版</span></button>
+    </nav>
+    <div class="rail-bottom"><span class="preview-tag">PREVIEW 0.3.0</span><a href="../">↖ DanDanTable<span>回到你的学习空间</span></a></div>
+  </aside>
+  <main id="experience">
+    <header class="page-header"><div><p class="eyebrow">POINT. PINCH.</p><h1>你的 AirPods，也是鼠标。</h1></div><button class="download-top soft-button" data-open="download-dialog"><svg><use href="#i-download"/></svg>下载 Mac 版</button></header>
+    <section class="console" aria-label="空指控制台">
+      <div class="console-head"><div class="wordmark"><img src="assets/app-icon.png" alt=""><strong>空指</strong><span>AIRPOINTER</span></div><span class="web-badge">网页体验</span><button class="icon-button" data-open="settings-dialog" aria-label="设置"><svg><use href="#i-gear"/></svg></button></div>
+      <div class="glass-group">
+        <section class="control-panel glass">
+          <div class="control-copy"><h2>指针控制</h2><p class="state" id="control-state" role="status"><i></i>准备就绪</p><div class="control-actions"><button class="primary" id="toggle-control"><svg><use href="#i-play"/></svg><span>使用鼠标</span></button><div class="pose-wrap"><button class="soft-button" id="pose-menu-button" aria-expanded="false" aria-controls="pose-menu"><svg><use href="#i-scope"/></svg>姿态调整</button><div class="pose-menu" id="pose-menu" hidden><button id="recenter">指针归中</button><button id="calibrate">校准姿态</button></div></div></div></div>
+          <div class="aim-mini" aria-hidden="true"><span class="aim-ring ring-a"></span><span class="aim-ring ring-b"></span><svg id="mini-cursor"><use href="#i-pointer"/></svg></div>
+        </section>
+        <section class="connection-panel glass" aria-label="演示设备"><div class="bud-icon"><svg><use href="#i-buds"/></svg></div><div><strong>AirPods 4</strong><p id="device-state">演示设备 · 待开始</p></div><span class="ear-label">右耳指向 · 左耳点按</span></section>
+        <div class="gestures glass" aria-label="手势"><button id="gesture-click"><svg><use href="#i-click"/></svg><strong>点击</strong><span>单按</span></button><button id="gesture-drag" aria-pressed="false"><svg><use href="#i-drag"/></svg><strong>拖拽</strong><span>双按</span></button><button id="gesture-scroll" aria-pressed="false"><svg><use href="#i-scroll"/></svg><strong>滚动</strong><span>三按</span></button></div>
+      </div>
+      <p class="browser-note">先在页面里体验。连接真实 AirPods、控制 Mac，请使用客户端。</p>
+    </section>
+    <section class="desktop-section" aria-labelledby="desktop-title">
+      <div class="section-heading"><h2 id="desktop-title">试着指向这里。</h2><span id="action-status" role="status">开始后，移动鼠标或使用方向键</span></div>
+      <div class="desktop glass" id="desktop" tabindex="0" aria-label="体验桌面，方向键移动，1点击，2拖拽，3滚动，Escape暂停">
+        <div class="desktop-top"><span>AirPointer</span><span id="desktop-mode">体验桌面</span><span>◉</span></div>
+        <article class="demo-window notes-window" id="notes-window" data-window>
+          <header class="window-title"><span class="traffic"><i></i><i></i><i></i></span><span>Notes</span><span class="window-mark">↗</span></header>
+          <div class="note-content" id="note-content"><p class="eyebrow">A LITTLE MORE FREEDOM</p><h3>Point.<br>Pinch.<br>Possibility.</h3><p>熟悉的耳机，多一种可能。</p><div class="note-rule"></div><h4>01 / Point</h4><p>转动右耳，指向你想去的地方。</p><h4>02 / Click</h4><p>轻捏耳机柄，完成一次点击。</p><h4>03 / Drag</h4><p>双按提起，移动后单按放下。</p><h4>04 / Scroll</h4><p>三按切换，上下转动即可滚动。</p><p class="note-end">Less on your desk.<br>More in your hand.</p></div>
+        </article>
+        <article class="demo-window gallery-window" id="gallery-window" data-window>
+          <header class="window-title"><span class="traffic"><i></i><i></i><i></i></span><span>Collection</span><span class="window-mark">↗</span></header>
+          <div class="collection"><button class="collection-card chosen" data-card="01"><span class="orb orb-a"></span><span>Silence<small>01</small></span></button><button class="collection-card" data-card="02"><span class="orb orb-b"></span><span>Motion<small>02</small></span></button></div>
+          <p class="collection-label" id="collection-label">SELECT SOMETHING YOU LIKE</p>
+        </article>
+        <div class="desktop-intro" id="desktop-intro"><svg><use href="#i-pointer"/></svg><span>点击「使用鼠标」开始体验</span></div>
+        <svg class="virtual-cursor" id="virtual-cursor" aria-hidden="true"><use href="#i-pointer"/></svg><span class="click-ripple" id="click-ripple"></span>
+      </div>
+      <p class="desktop-hint"><span id="movement-hint">移动鼠标 / 方向键指向</span><span><kbd>1</kbd> 点击 <kbd>2</kbd> 拖拽 <kbd>3</kbd> 滚动 <kbd>esc</kbd> 暂停</span></p>
+    </section>
+    <footer class="page-footer"><span>空指 · AirPointer</span><span>在你的设备上，轻一点。</span><button data-open="download-dialog">带到 Mac 上 ↗</button></footer>
+  </main>
+</div>
+<dialog id="download-dialog" class="modal download-modal" aria-labelledby="download-title"><button class="close-button" aria-label="关闭">×</button><img class="download-icon" src="assets/app-icon.png" alt="空指"><p class="eyebrow">AIRPOINTER FOR MAC</p><h2 id="download-title">把空指带到 Mac。</h2><p class="modal-intro">连接 AirPods，指向、点按、拖拽和滚动。</p><a class="primary download-link" href="downloads/AirPointer-0.3.0-arm64.dmg" download><svg><use href="#i-download"/></svg>下载 Mac 预览版<span id="download-size"></span></a><p class="requirements">macOS 14+ · Apple Silicon · 0.3.0</p><ol class="install-steps"><li><span>1</span><div><strong>拖入应用程序</strong><p>打开 DMG，把「空指」拖到 Applications。</p></div></li><li><span>2</span><div><strong>取出右耳，连接 AirPods</strong><p>在 Mac 配对耳机后，打开空指并完成授权。</p></div></li><li><span>3</span><div><strong>校准一次，下次自动保存</strong><p>对准中心、右侧和上方，即可开始控制。</p></div></li></ol><details class="release-note"><summary>首次打开与预览版说明</summary><p>此预览版使用本地签名，尚未经 Apple 公证。若 macOS 阻止打开，请在「系统设置 → 隐私与安全性」中查看并允许你刚下载的空指。请保留系统安全保护。</p><p>当前已在 AirPods 4 上测试。为了可靠识别双按和三按，控制期间音频输出会切到 AirPods，暂停后恢复。姿态与设置仅在本机处理。</p></details></dialog>
+<dialog id="settings-dialog" class="modal" aria-labelledby="settings-title"><button class="close-button" aria-label="关闭">×</button><p class="eyebrow">MAKE IT YOURS</p><h2 id="settings-title">轻一点，稳一点。</h2><fieldset class="stability-options"><legend>点击稳定方案</legend><label class="option"><input type="radio" name="stability" value="auto" checked><span><strong>自动稳点</strong><small>忽略小幅抖动，移动到目标后更好点击。</small></span></label><label class="option"><input type="radio" name="stability" value="wear"><span><strong>佩戴感应锁定 · 演示</strong><small>按住空格或按住桌面时移动，松开后锁住落点。</small></span></label></fieldset><label class="range-label" for="sensitivity">灵敏度 <output id="sensitivity-value">1.0×</output></label><input id="sensitivity" type="range" min="0.6" max="1.8" step="0.1" value="1"><p class="settings-note">此处只保存网页体验设置，不会更改 Mac 客户端。</p></dialog>
+<dialog id="film-dialog" class="modal film-modal" aria-label="产品演示"><button class="close-button" aria-label="关闭">×</button><video id="product-film" controls playsinline preload="none" poster="assets/film-poster.jpg"><source src="assets/film.mp4" type="video/mp4"></video><p>Point. Pinch. Your AirPods. Your pointer.</p></dialog>
+<dialog id="calibration-dialog" class="calibration-modal" aria-labelledby="calibration-title"><button class="close-button" aria-label="关闭">×</button><div class="calibration-copy"><p class="eyebrow">ADJUST POSE</p><h2 id="calibration-title">点击中心靶点</h2><p>依次点击靶点，体验校准流程。真实耳机校准在 Mac 版完成。</p><span id="calibration-progress">1 / 3</span></div><button id="calibration-target" aria-label="记录当前靶点"><svg><use href="#i-scope"/></svg></button></dialog>
+<script src="app.js"></script>
+</body></html>
